@@ -1,37 +1,35 @@
-##### a
+### css权重
 
-超链接
+!important（Infinity）
 
-```html
-<a href="" target="_self"></a>
-```
+行间样式（1000）
 
-`href` 属性里边放网址，
+id（100）
 
-`target=“_self”` 在当前窗口打开，还有一个 `_blank` 作用是在新的标签页打开。
+class/属性/伪类（10）
 
-**a 标签里不能嵌套a标签**
+标签/伪元素（1）
 
+通配符（0）
 
+注：
 
-锚点
+权重相同时，书写靠后的代码覆盖书写靠前的代码。
 
-```html
-<div id=“div1”></div>
-<div id=“div2”></div>
+!important 写在 css 代码后，最好不要用。不利于代码维护
 
-<a href=“#demo1”>jump div1</a>
-<a href=“#demo2”>jump div2</a>
-```
-
-当两个 div 在一个页面中时，a 标签可以起到一个目录的作用，点击 a 标签，跳转到对应的位置。
+这里的值是 256 进制
 
 
 
-协议限定符
+#### 盒模型
 
-```html
-<a href="javascript:while(1){alert('让你手欠!')}">点我</a>
-```
+**margin+border+padding+（content=width+height）**
 
-运行js代码
+外边距：margin（容器与容器之间的距离）
+
+盒子边框：border
+
+内边距：padding（容器与内部内容之间的距离, 内边距是不能放内容的,并且会把盒子撑开）
+
+盒子内容：width+height
