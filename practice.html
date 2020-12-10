@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlancDove</title>
-    <style>
-        div{
-            width: 0;
-            height: 0;
-            border: 50px solid transparent;
-            border-bottom-color: #000;
-            border-left-color: #000;
-        }
-    </style>
-</head>
-<body>
-    <div></div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BlancDove</title>
+		<style>
+			.left {
+				width: 100px;
 
-</body>
+				height: 100px;
+
+				background-color: #fcc;
+
+				position: absolute;
+
+				right: 0;
+			}
+			.right {
+				height: 100px;
+
+				background-color: #123;
+
+				margin-right: -100px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 两栏布局 -->
+		<div class="left">123</div>
+		<div class="right">123</div>
+	</body>
 </html>

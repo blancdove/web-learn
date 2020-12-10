@@ -64,6 +64,33 @@ text-decoration
 
 
 
+float
+
+浮动，left、right
+
+浮动元素产生了浮动流，所有产生了浮动流的元素，块级元素看不到他们，产生了 bfc 的元素和文本类属性的元素（inline）以及文本都能看到浮动元素。
+
+元素浮动后会导致父级元素高度塌陷，解决：
+
+1. 给父级元素添加一个伪元素after用来清除浮动
+
+```css
+// 假如div为父元素
+div::after{
+	content: "";
+    display: block;
+    clear: both;
+}
+```
+
+2. 给父元素触发BFC
+
+凡是设置了 float：left/right 或者 position：absolute 的元素内部会自动把他转化为行级块元素（inline-block）。
+
+
+
+
+
 #### 文字特性
 
 凡是带有 inline 的元素（文本类属性元素），都有**文字特性**。
@@ -128,7 +155,34 @@ div{
 
 
 
+#### margin 塌陷
 
+垂直方向的 margin 父子元素是结合在一起的，取较大的一个值，
+
+即父级元素包裹了一个子元素，给父级元素加了一个 margin-top 值，给子元素也加了一个 margin-top 值，当子元素的值小于父元素的值时，子元素的值不起作用，当子元素的值大于父元素的值时，子元素会和父元素一起动。
+
+解决：给父级元素触发 BFC
+
+- 浮动元素：（元素的 [`float`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) 不是 `none`）
+- 绝对定位元素：（元素的 [`position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) 为 `absolute` 或 `fixed`）
+- 行内块元素（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 为 `inline-block`）
+- [`overflow`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow) 计算值(Computed)不为 `visible` 的块元素
+
+
+
+#### margin 合并
+
+两个兄弟级别的元素垂直方向上的 margin 会合并，并取较大的margin。
+
+
+
+#### 文字溢出打点
+
+```css
+white-space: nowrap;	/* 不换行 */
+overflow: hidden;	/* 溢出部分隐藏 */
+text-overflow: ellipsis;	/* 文字打点 */
+```
 
 
 
