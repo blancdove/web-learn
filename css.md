@@ -186,6 +186,30 @@ text-overflow: ellipsis;	/* 文字打点 */
 
 
 
+#### 图片替代文字
+
+背景图片
+
+1. 方法一
+
+	利用文字首行缩进，将文字挤出容器
+
+```css
+text-indent	/* 文字首行缩进，值要大于容器的宽 */
+white-space：nowrap;	/* 禁止换行 */
+overflow：hidden;	/* 隐藏溢出的文字 */
+```
+
+2. 方法二
+
+	padding可以展示图片，但不能展示文字
+
+```css
+hight：0px;	/* 容器的高清零 */
+padding-top	/* 撑开容器，用于显示背景图 */
+overflow：hidden;	/* 隐藏溢出的文字 */
+```
+
 
 
 
