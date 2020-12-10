@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.header{
+				height: 50px;
+				background-color: lightblue;
+			}
+			.footer{
+				height: 200px;
+				background-color: lightgray;
+			}
+			.left{
+				width: 200px;
+				background-color: lightcoral;
+				margin-left: -100%;
+				left: -200px;
+			}
+			.right{
+				width: 300px;
+				background-color: lightgreen;
+				margin-left: -300px;
+				right: -300px;
+			}
+			.center{
+				width: 100%;
+				background-color: lightpink;
+			}
+			.left,
+			.right{
+				height: 500px;
+				float: left;
+				position: relative;
+			}
+			.center{
+				height: 500px;
+				float: left;
+			}
+			.main{
+				overflow: hidden;
+				padding: 0 300px 0 200px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="header">头部</div>
+		<div class="main">
+			<div class="center">
+				中间自适应中间自适应中间自适应中间自适应中间自适应中间自适应中间自适应中间自适应
+			</div>
+			<!-- 因为相对来说，center中为主要内容，所以写前边，这样也有利于SEO -->
+			<div class="left">左列定宽</div>
+			<div class="right">右列定宽</div>
+		</div>
+		<div class="footer">底部</div>
+	</body>
+</html>
