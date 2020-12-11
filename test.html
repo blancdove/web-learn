@@ -7,27 +7,24 @@
 	</head>
 	<body>
 		<script>
-			Grand.prototype.lastName = "Deng";
-
-			function Grand() {}
-
-			var grand = new Grand();
-
-			Father.prototype = grand;
+			Father.prototype = {
+                name:"baige"
+            };
 
 			function Father() {
-				this.name = "xuming";
+				
 			}
 
-			var father = new Father();
-
-			Son.prototype = father;
+			function F(){}
+            F.prototype = Father.prototype;
+            Son.prototype = new F();
 
 			function Son() {
-				this.hobbit = "smoke";
+				
 			}
-
+            Son.prototype.age = 18
 			var son = new Son();
+            var father = new Father()
 		</script>
 	</body>
 </html>
