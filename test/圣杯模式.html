@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BlancDove</title>
+	</head>
+	<body>
+		<script>
+			// 圣杯模式
+
+			Father.prototype.lastName = "chen";
+			// Father.prototype = {
+			// 	lastName: 'chen'
+			// }
+			function Father() {}
+			function Son() {}
+
+			// 普通继承写法
+			function inherit(target, origin) {
+				function F() {}
+				F.prototype = origin.prototype;
+				target.prototype = new F();
+				target.prototype.constructor = target;
+				target.prototype.uber = origin.prototype;
+			}
+
+			// 雅虎YUI3继承写法
+			var inherit = (function () {
+				var F = function () {};
+				return function (target, origin) {
+					F.prototype = origin.prototype;
+					target.prototype = new F();
+					target.prototype.constructor = target;
+					target.prototype.uber = origin.prototype;
+				};
+			}());
+
+
+			inherit(Son, Father);
+
+			var son = new Son();
+			var father = new Father();
+		</script>
+	</body>
+</html>

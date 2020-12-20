@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var name = "222";
+		var a = {
+			name:"111",
+			say:function(){
+				console.log(this.say);
+			}
+		}
+		var fun = a.say;
+		fun();  // 222
+		a.say();  // 111
+	</script>
+</body>
+</html>

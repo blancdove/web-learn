@@ -59,6 +59,26 @@ typeof 返回值为字符串类型且有六种：
 
 
 
+#### in操作符
+
+>```js
+>prop in object
+>```
+
+指定的属性(prop)在指定的对象(object)或其原型链中，返回true。
+
+
+
+#### instanceof运算符
+
+> ```js
+> object instanceof constructor
+> ```
+
+用来检测 `constructor.prototype `是否存在于参数 `object` 的原型链上。
+
+
+
 #### 显式类型转换
 
 **Number**：

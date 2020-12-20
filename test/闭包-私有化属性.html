@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		function Cheater(name, wife){
+			var prepareWife = "goddess";  // 私有化变量
+			this.name = name;
+			this.wife = wife;
+			this.sayPrepareWife = function(){ // 闭包
+				console.log(prepareWife);
+			};
+			this.divorce = function(){
+				this.wife = prepareWife;
+			}
+		}
+		var cheater = new Cheater('xiaozhu','xiaoliu')
+	</script>
+</body>
+</html>
