@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var obj = {
+			name: "baige",
+			age: 20,
+			hobby: ['game','study', ['book', 'photography']],
+			friend: {
+				name: "xiaoli",
+				age: 18,
+				friend:{
+					name:"xiaochen",
+					age:20
+				}
+			}
+		}
+
+		// 浅度克隆
+		function clone(origin, target){
+			var target = target || {};
+			for(var prop in origin){
+				if(origin.hasOwnProperty(prop)){
+					target[prop] = origin[prop]
+				}
+			}
+			return target;
+		}
+
+		// 深度克隆
+		// function deepClone(origin, target){
+		// 	var target = target || {};
+		// 	var toStr = Object.prototype.toString;
+		// 	var arrStr = "[object Array]";
+		// 	for(var prop in origin){
+		// 		if(origin.hasOwnProperty(prop)){
+		// 			// 判断是否为引用值类型
+		// 			if(origin[prop] !== null && typeof origin[prop] === "object"){
+		// 				// 判断是否为数组类型
+		// 				if(toStr.call(origin[prop]) === arrStr){
+		// 					// 初始化一个数组
+		// 					target[prop] = [];
+		// 				}else{
+		// 					// 对象类型
+		// 					target[prop] = {};
+		// 				}
+		// 				// 递归
+		// 				deepClone(origin[prop],target[prop]);
+		// 			}else{
+		// 				// 原始值类型
+		// 				target[prop] = origin[prop];
+		// 			}
+		// 		}
+		// 	}
+		// 	return target;
+		// }
+
+			// 深度克隆三目运算
+		function deepClone(origin, target){
+			var target = target || {};
+					toStr = Object.prototype.toString;
+					arrStr = "[object Array]";
+			for(let prop in origin){
+				if(typeof origin[prop] === "object"){
+					target[prop] = toStr.call(origin[prop]) === arrStr ? [] : {};
+					deepClone(origin[prop], target[prop])
+				} else{
+					target[prop] = origin[prop]
+				}
+			}
+			return target;
+		}
+
+
+
+	</script>
+</body>
+</html>

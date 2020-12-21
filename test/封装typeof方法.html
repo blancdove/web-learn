@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlancDove</title>
+</head>
+<body>
+    <script>
+        // typeof将null，array，object全部返回object
+        // 封装一个type区分
+        function type(target){
+            var ret = typeof(target);
+            var template = {
+                "[object Array]": "array",
+                "[object Object]": "object",
+                "[object Number]": "number-object",
+                "[object Boolean]": "boolean-object",
+                "[object String]": "string-object",
+            }
+            if(target === null){  // 是null直接返回null字符串
+                return "null"
+            }
+            else if(ret == "object"){  // 是object，需要区分
+                var str = Object.prototype.toString.call(target);
+                return template[str]
+            }
+            else{
+                // 其他值直接返回，其中包括function
+                return ret;
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [1,2,3,4,5,6,1,2,3,4,5,6,7,7];
+
+		// 去重思想
+		// 利用对象的属性名是唯一的
+
+		// Array.prototype.unique = function(){
+		// 	var temp = {};
+		// 	var arr = [];
+		// 	var len = this.length;
+		// 	for(var i = 0;i < len; i++){
+		// 		temp[this[i]] = "a";
+		// 	}
+		// 	return Object.keys(temp)
+		// }
+
+		Array.prototype.unique = function(){
+			var temp = {};
+			var arr = [];
+			var len = this.length;
+			for(var i = 0; i < len; i++){
+				// 如果对象中不存在此属性，更新对象，并将其加到arr中，最后返回arr
+				if(!temp[this[i]]){  
+					temp[this[i]] = "a";
+					arr.push[this[i]];
+				}
+			}
+			return arr;
+		}
+
+
+	</script>
+</body>
+</html>

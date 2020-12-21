@@ -9,6 +9,9 @@
 	<script>
 		var name = "global";
 
+
+		// 每一个模块都写在一个立即执行函数中
+		// 函数内部的变量不会污染全局
 		var initBaiGe = (function(){
 			var name = "baige";
 			function sayName(){
