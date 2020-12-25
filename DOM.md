@@ -4,7 +4,7 @@
 
 区分标准模式和怪异模式
 
-document.compatMode
+> document.compatMode
 
 CSS1Compat：标准模式
 
